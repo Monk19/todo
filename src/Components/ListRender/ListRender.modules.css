@@ -1,0 +1,27 @@
+.list-section {
+  background-color: rgb(218, 226, 142);
+  color: white;
+  height: 100vh;
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+ul {
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+}
+li {
+  list-style-type: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  height: 10%;
+  width: 50%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(19, 18, 18);
+  margin: 10px 25%;
+}

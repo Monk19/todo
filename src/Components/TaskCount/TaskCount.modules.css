@@ -1,0 +1,9 @@
+.Count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.Count div {
+  font-size: 40px;
+  font-weight: bold;
+}

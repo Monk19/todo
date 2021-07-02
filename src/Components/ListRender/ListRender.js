@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./ListRender.modules.css";
 function ListRender(props) {
   const ChangeStatus = (index) => {
     props.statChange(index);
@@ -7,7 +7,7 @@ function ListRender(props) {
 
   return (
     <div>
-      <ul>
+      <ul className="list-section">
         {props.listItems.length === 0 ? (
           <h1>No Task</h1>
         ) : (
@@ -15,7 +15,8 @@ function ListRender(props) {
             <li
               key={item.name + `${Math.random()}`}
               style={{
-                color: item.status === true ? "red" : "blue",
+                color: item.status === true ? "black" : "",
+                textDecoration: item.status === true ? "line-through" : "none",
               }}
               onClick={() => {
                 ChangeStatus(index);

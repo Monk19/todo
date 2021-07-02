@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./InputSection.modules.css";
 const InputSection = (props) => {
   const [currentItem, setCurrentItem] = useState("");
   const newTask = (e) => {
@@ -7,12 +7,12 @@ const InputSection = (props) => {
   };
   const addingTaskToMain = (e) => {
     e.preventDefault();
-      props.headTask({ name: currentItem, status: false });
-      setCurrentItem("")
+    props.headTask({ name: currentItem, status: false });
+    setCurrentItem("");
   };
 
   return (
-    <div>
+    <div className="input-section">
       <form onSubmit={addingTaskToMain}>
         <input
           type="text"

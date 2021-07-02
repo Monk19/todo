@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import InputSection from "./Components/InputSection/InputSection";
+import ListRender from "./Components/ListRender/ListRender";
 function App() {
+  const [cArray, setcArray] = useState([]);
+
+  const addTask = (item) => {
+    console.log(cArray);
+    if (item.name.length === 0) {
+      console.log("Enter a valid item");
+      return;
+    } else {
+      setcArray([item, ...cArray]);
+    }
+  };
+  const statusChange = (iden) => {
+    const completedTask = cArray.map((item, index) => {
+      if (iden === index) {
+        item.status = true;
+        return item;
+      } else {
+        console.log(item);
+        return item;
+      }
+    });
+    setcArray(completedTask);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <InputSection headTask={addTask} />
+      <ListRender listItems={cArray} statChange={statusChange} />
     </div>
   );
 }
